@@ -1,0 +1,58 @@
+--================================Create new database =====================================
+create database student
+
+--================================create Table=============================================
+
+create table student(
+studentid int primary key ,
+[Name] varchar(30),
+RollNo int,
+student_course varchar(50),
+student_email varchar(30),
+)
+
+--============================Add new column================================================
+alter table student
+add student_father_Name varchar(50) not null
+
+--==============================drop new column=============================================
+drop column student_email int
+
+--==============================insertion data=============================================
+insert into student(studentid,[Name],RollNo,student_course,student_email)
+values(1,'wisal',20,'data','wisalmalik99@gmail')
+
+--==============================Select=====================================================
+--for the select all the database ,use this query
+select *from student
+--if we want to select on column then use this query
+select studentid from student
+-- we can use some mathematically operation in the column
+select RollNo from student
+--if we want to count the thing use 
+select studentid from student
+
+
+--=========================================Where==========================================
+--where query we use the condition on the coloumn accoding to that condition the output is come 
+select *from student
+where studentid >5 and RollNo >15
+
+--we can use the not keyword to revese the query
+where not studentid >5
+
+-- for the null conditoin
+where RollNo is null
+
+
+--=====================================Update===============================================
+select *from student
+update student set
+[name] = 'ali',
+RollNo = 30
+where studentid = 1;
+
+--==========================================delete==========================================
+
+delete from student where studentid = 1;
+
